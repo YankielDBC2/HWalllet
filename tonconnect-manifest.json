@@ -1,0 +1,8 @@
+{
+  "url": "https://space-hunters-game.github.io/website",
+  "name": "HH Wallet",
+  "iconUrl": "https://space-hunters-game.github.io/website/icon.png",
+  "termsOfUseUrl": "https://space-hunters-game.github.io/website/terms",
+  "privacyPolicyUrl": "https://space-hunters-game.github.io/website/privacy",
+  "enabledWallets": ["tonkeeper", "tonhub", "openmask"]
+}
