@@ -2,10 +2,14 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Connect Wallet</title>
+  <title>Connecting to Tonkeeper...</title>
   <script>
     window.onload = () => {
-      window.location.href = "https://app.tonkeeper.com/ton-connect?v=2&id=hhwallet&ret=back&manifestUrl=https://yankiedbc2.github.io/HWwallet/tonconnect-manifest.json&r=%7B%22items%22%3A%5B%7B%22name%22%3A%22ton_addr%22%7D%5D%7D";
+      const url = "https://app.tonkeeper.com/ton-connect" +
+        "?v=2&id=hhwallet&ret=back" +
+        "&manifestUrl=https://yankiedbc2.github.io/HWwallet/tonconnect-manifest.json" +
+        "&r=%7B%22items%22%3A%5B%7B%22name%22%3A%22ton_addr%22%7D%5D%7D";
+      window.location.href = url;
     };
   </script>
 </head>
