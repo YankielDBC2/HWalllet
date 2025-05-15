@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Connect and Sign</title>
+  <title>Connect Wallet</title>
   <script src="https://unpkg.com/@tonconnect/ui/dist/tonconnect-ui.min.js"></script>
   <style>
     body {
@@ -15,54 +15,21 @@
       justify-content: center;
       height: 100vh;
     }
-    button {
+
+    #connect-button {
       margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>🪙 HW Wallet Connect</h1>
+  <h1>🔗 Conectar Wallet</h1>
   <div id="connect-button"></div>
-  <button id="sign-btn" style="display:none;">✍️ Firmar transacción</button>
 
   <script>
     const connector = new TonConnectUI.TonConnectUI({
       manifestUrl: "https://yankieldbc2.github.io/HWalllet/tonconnect-manifest.json",
       buttonRootId: "connect-button"
     });
-
-    const signBtn = document.getElementById("sign-btn");
-
-    // Mostrar botón de firmar cuando esté conectado
-    connector.onStatusChange(wallet => {
-      if (wallet) {
-        signBtn.style.display = "block";
-      } else {
-        signBtn.style.display = "none";
-      }
-    });
-
-    // Simular transacción para disparar el popup
-    signBtn.onclick = async () => {
-      try {
-        await connector.sendTransaction({
-          validUntil: Math.floor(Date.now() / 1000) + 60, // 1 minuto
-          messages: [
-            {
-              address: "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c", // dirección de destino (puede ser dummy)
-              amount: "1000000", // 0.001 TON
-              payload: "" // opcional: mensaje extra
-            }
-          ]
-        });
-      } catch (e) {
-        alert("Transacción cancelada o fallida");
-        console.error(e);
-      }
-    };
   </script>
 </body>
 </html>
