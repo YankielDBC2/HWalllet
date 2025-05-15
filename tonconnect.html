@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Connecting to Tonkeeper...</title>
-  <script>
-    window.onload = () => {
-      const url = "https://app.tonkeeper.com/ton-connect" +
-        "?v=2&id=hhwallet&ret=back" +
-        "&manifestUrl=https://yankiedbc2.github.io/HWwallet/tonconnect-manifest.json" +
-        "&r=%7B%22items%22%3A%5B%7B%22name%22%3A%22ton_addr%22%7D%5D%7D";
-      window.location.href = url;
-    };
-  </script>
+  <title>Connect Wallet</title>
+  <script src="https://unpkg.com/@tonconnect/ui/dist/tonconnect-ui.min.js"></script>
+  <style>
+    body {
+      background: #0c0c0c;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    #connect-button {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <p>Connecting to Tonkeeper...</p>
+  <h1>🪙 Conectar Wallet</h1>
+  <div id="connect-button"></div>
+
+  <script>
+    const connector = new TonConnectUI.TonConnectUI({
+      manifestUrl: "https://yankieldbc2.github.io/HWalllet/tonconnect-manifest.json",
+      buttonRootId: "connect-button"
+    });
+  </script>
 </body>
 </html>
